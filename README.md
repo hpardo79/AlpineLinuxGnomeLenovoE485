@@ -12,7 +12,7 @@ Para esta instalación de Alpine utilice un computador portátil
 + RAM: 16GB
 + HDD: SSD M.2 256GB
 
-![Lenovo ThinkPad E485](/img/lenovo-laptop-thinkpad-e485-hero.png)
+<img src="/img/lenovo-laptop-thinkpad-e485-hero.png" width=40% height=40%>
 
 ## Sistema (SOFTWARE)
 La versión de Alpine y el entorno de Escritorio
