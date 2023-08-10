@@ -3,7 +3,7 @@ El principal objetivo de esta breve guía es de instalar la **Distro Alpine Linu
 
 Mostrare toda la configuracion del sistema para dejar funcional el equipo tanto para tareas de ofimática, navegación web, edición multimedia, programación y hasta para jugar. Para lograrlo se debe dejar optimizado todo el Hardware del equipo. Algunas de las configuraciones opcionales que no utilice en este equipo pero que aparecen con recomendaciones para los casos de conflictos serán mostradas con un texto ~~tachado~~.
 
-## El Equipo (HARDWARE)
+## Equipo (HARDWARE)
 Para esta instalación de Alpine utilice un computador portátil
 + Marca: Lenovo 
 + Modelo: ThinkPad E485 LA
@@ -28,3 +28,5 @@ $ setup-alpine
 
 Continuar con las opciones de configuración:
 + **Keyboard Layout** (Seleccionar el idioma y la distribución del teclado, ej. `es` variante `latam`.)
++ **Hostname** (Nombre para el computador.)
++ **Network** (Por ejemplo, utilizar descubrir la dirección IP automáticamente mediante el Protocolo `DHCP`.)
