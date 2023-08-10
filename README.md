@@ -17,3 +17,14 @@ La versión de Alpine y el entorno de Escritorio
 + OS: Alpine Linux v3.18
 + DE: Gnome 44.3
 + APPS: Variadas
+
+# Instalar Alpine
+Iniciamos con el encendido del equipo e iniciar desde la imagen de la Distro, inmediatamente hay que loguearse como usuario `root`.
+
+Luego ejecutamos el script de instalación que viene incliudo en Alpine
+```
+$ setup-alpine
+```
+
+Continuar con las opciones de configuración:
++ **Keyboard Layout** (Seleccionar el idioma y la distribución del teclado, ej. `es` variante `latam`.)
