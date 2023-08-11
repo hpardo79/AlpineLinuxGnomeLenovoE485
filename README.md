@@ -80,7 +80,7 @@ Desactiva la cuenta de root:
 $ doas passwd -l root
 ```
 
-## Agregar los Repositorios de la Comunidad
+## Repositorios de la Comunidad
 Editar los repositorios de `apk` y habilitar los de la comunidad:
 ```
 $ <editor> /etc/apk/repositories
@@ -93,6 +93,23 @@ http://mirror.leaseweb.com/alpine/v3.18/main
 #http://mirror.leaseweb.com/alpine/v3.18/community
 ```
 
-## Instalar Bash Shell
+## Bash Shell
+Instalar el intérprete de comandos `bash`
+```
+apk add bash bash-completion bash-doc
+```
 
+Para cambiar el shell de `root` debemos editar:
+```
+$ <editor> /etc/passwd
+```
 
+Buscar el shell predeterminado del usuario, ej. */bin/ash*
+```
+root:x:0:0:root:/root:/bin/ash
+```
+
+Reemplazar con */bin/bash*:
+```
+root:x:0:0:root:/root:/bin/bash
+```
