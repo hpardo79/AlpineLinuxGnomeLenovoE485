@@ -5,7 +5,7 @@ Realizare el paso a paso de toda la configuracion del sistema con la finalidad d
 
 Algunas de las configuraciones son **opcionales** porque no las utilice en este equipo pero aparecen ya pueden ser útiles en los casos de conflictos, las mismas serán mostradas con un texto ~~tachado~~.
 
-## Equipo (HARDWARE)
+## HARDWARE
 Para esta instalación de Alpine utilice un computador portátil
 + Marca: Lenovo 
 + Modelo: ThinkPad E485 LA
@@ -16,7 +16,7 @@ Para esta instalación de Alpine utilice un computador portátil
 
 <img src="/img/lenovo-thinkpad-e485.png" width=40% height=30%>
 
-## Sistema (SOFTWARE)
+## SOFTWARE
 La versión de Alpine y el entorno de Escritorio
 + OS: Alpine Linux v3.18
 + DE: Gnome 44.3
@@ -79,3 +79,17 @@ Desactiva la cuenta de root:
 ```
 $ doas passwd -l root
 ```
+
+## Agregar los Repositorios de la Comunidad
+Editar los repositorios de `apk`, habilitar los de la comunidad:
+```
+$ <editor> /etc/apk/repositories
+```
+
+Descomentar la línea de los repositorios de la comunidad:
+```
+#/media/dm-0/apks
+http://mirror.leaseweb.com/alpine/v3.18/main
+#http://mirror.leaseweb.com/alpine/v3.18/community
+```
+
