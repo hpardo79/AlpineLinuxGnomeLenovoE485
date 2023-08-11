@@ -81,7 +81,7 @@ $ doas passwd -l root
 ```
 
 ## Agregar los Repositorios de la Comunidad
-Editar los repositorios de `apk`, habilitar los de la comunidad:
+Editar los repositorios de `apk` y habilitar los de la comunidad:
 ```
 $ <editor> /etc/apk/repositories
 ```
@@ -92,4 +92,7 @@ Descomentar la línea de los repositorios de la comunidad:
 http://mirror.leaseweb.com/alpine/v3.18/main
 #http://mirror.leaseweb.com/alpine/v3.18/community
 ```
+
+## Instalar Bash Shell
+
 
