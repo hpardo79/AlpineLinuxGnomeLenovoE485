@@ -1,7 +1,9 @@
 # Utilizar Alpine Linux como SO de uso diario
-El principal objetivo de esta breve guía es de instalar la **Distro Alpine Linux** con el **Escritorio Gnome 44** en un computador portátil para que sea mi sistema de uso diario, esto a pesar que de la Distro Alpine es mayormente utilizada en la instalación de Servidores mediante el uso de Docker.
+Esta breve guía es para instalar **Alpine Linux** con el escritorio **Gnome 44** en un computador portátil para que sea mi *Sistema Operativo* de uso diario, esto a pesar de que esta **Distro** es mayormente utilizada en Servidores para contenedores Docker.
 
-Mostrare toda la configuracion del sistema para dejar funcional el equipo tanto para tareas de ofimática, navegación web, edición multimedia, programación y hasta para jugar. Para lograrlo se debe dejar optimizado todo el Hardware del equipo. Algunas de las configuraciones opcionales que no utilice en este equipo pero que aparecen con recomendaciones para los casos de conflictos serán mostradas con un texto ~~tachado~~.
+Realizare el paso a paso de toda la configuracion del sistema con la finalidad de dejar funcional el equipo tanto para tareas de ofimática, navegación web, edición multimedia, programación y hasta para jugar. Lograrlo involucra dejar optimizado todo el Hardware del equipo. 
+
+Algunas de las configuraciones son **opcionales** porque no las utilice en este equipo pero aparecen ya pueden ser útiles en los casos de conflictos, las mismas serán mostradas con un texto ~~tachado~~.
 
 ## Equipo (HARDWARE)
 Para esta instalación de Alpine utilice un computador portátil
@@ -12,7 +14,7 @@ Para esta instalación de Alpine utilice un computador portátil
 + RAM: 16GB
 + HDD: SSD M.2 256GB
 
-<img src="/img/lenovo-laptop-thinkpad-e485-hero.png" width=40% height=40%>
+<img src="/img/lenovo-thinkpad-e485.png" width=40% height=30%>
 
 ## Sistema (SOFTWARE)
 La versión de Alpine y el entorno de Escritorio
@@ -43,9 +45,37 @@ Continuar con las opciones de configuración:
 + **NTP** (Cliente de protocolo de tiempo de red usado para mantener el reloj del sistema sincronizado con servidor de tiempo. El cliente `chrony` es predeterminado en la instalación.)
 + **Disk Mode** (Seleccionar entre sin disco `disk=none`, `data`, `sys` o según la opción requerida.
 
-## Primer arranque del sistema
+# Primer arranque del sistema
 En Alpine Linux el manejador de paquetes es `apk`, debemos actualizar el listado de paquetes e instalar las actualizaciones pendientes:
 ```
 $ apk update
 $ apk upgrade
+```
+
+## Editor para el Terminal
+Instalar el **editor** de nuestra preferencia (ej. vim, nano.)
+```
+$ apk add <editor>
+```
+
+## Doas (no usar Sudo)
+`doas` es un programa para ejecutar comandos como otro usuario, generalmente como **root**. Primero debemos agregar el usuario al grupo `wheel` y luego instalar `doas`.
+```
+$ adduser <usuario> wheel
+$ apk add doas
+```
+
+~~Permitir que los miembros del grupo `wheel` utilicen privilegios de root con doas. Para hacer esto, abre el archivo de configuración de doas:~~
+```
+$ <editor> /etc/doas.d/doas.conf
+```
+
+~~Agrega la siguiente línea y guarda el archivo:~~
+```
+permit persist :wheel
+```
+
+Desactiva la cuenta de root:
+```
+$ doas passwd -l root
 ```
