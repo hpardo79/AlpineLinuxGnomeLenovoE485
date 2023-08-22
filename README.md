@@ -262,7 +262,24 @@ $ apk add xdg-desktop-portal-gtk
 ```
 
 ## Video Radeon
+... pendiente
 
 ## Paquetes Adicionales
- Completar el soporte de idioma: [*](#agregar-soporte-para-idiomas-con-locale)
+
+### Completar el soporte de idiomas [Locale](#agregar-soporte-para-idiomas-con-locale)
+Instalar los paquetes de traducción de todos los paquetes instalados:
+```
+apk add lang
+```
+
+### Documentación
+Instalar la documentación de todos los paquetes instalados:
+```
+apk add docs
+```
+
+
+
+
+ 
 
