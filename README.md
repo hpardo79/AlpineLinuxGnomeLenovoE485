@@ -165,7 +165,104 @@ $ addgroup  audio
 $ addgroup  video
 ```
 
-Instalar los paquetes:
+Instalar los paquetes para `Pipewire` y el manejador de sesión `Wireplumber`:
 ```
-$ apk add pipewire gst-plugin-pipewire
+$ apk add pipewire gst-plugin-pipewire wireplumber
 ```
+
+Paquetes para compatibilidad `PulseAudio` `JACK` `ALSA`:
+```
+$ apk add pipewire-pulse pipewire-jack pipewire-alsa
+```
+
+### Configuración de Pipewire
+Los archivos de las configuraciones de PipeWire y WirePlumber estan por defecto en */usr/share/pipewire* y */usr/share/wireplumber*. Para realizar los cambios en la configuración se requieren copiar a */etc*:
+```
+$ cp -a /usr/share/pipewire /etc
+$ cp -a /usr/share/wireplumber /etc
+```
+### Deshabilitar el Soporte D-Bus
+Editar los siguientes parametros:
+
+El contenido de */etc/pipewire/pipewire.conf*:
+```
+context.properties = {    
+...
+support.dbus = false
+}
+```
+
+El contenido de */etc/wireplumber/wireplumber.conf*
+```
+context.properties = {
+...
+support.dbus = false
+}
+```
+
+El contenido de */etc/wireplumber/bluetooth.lua.d/50-bluez-config.lua*
+```
+bluez_monitor.properties = {
+...
+["with-logind"] = false,
+}
+```
+
+El contenido de */etc/wireplumber/main.lua.d/50-alsa-config.lua*
+```
+alsa_monitor.properties = {
+...
+["alsa.reserve"] = false,
+}
+```
+
+El contenido de */etc/wireplumber/main.lua.d/50-default-access-config.lua*
+```
+default_access.properties = {
+...
+["enable-flatpak-portal"] = false,
+}
+```
+
+### "Realtime Scheduling"
+
+Asegurar que el usuario tenga los permisos ilimitados. Agregar al grupo `pipewire`.
+
+$ addgroup pipewire
+
+
+### Video Webcams
+El video debe funcionar para dispositivos video4linux *v4l2* (por ejemplo *webcams*) y aplicaciones GStreamer. 
+```
+$ apk add gstreamer
+```
+
+### Audio Bluetooth
+Para habilitar el soporte con PulseAudio; instalar los paquetes de servicio bluetooth:
+```
+$ apk add bluez bluez-openrc pipewire-spa-bluez
+```
+
+Opcional la GUI del manejador para bluetooth:
+```
+$ apk add blueman
+```
+
+Habilitar e iniciar el servicio bluetooth:
+```
+$ rc-update add bluetooth
+$ rc-service bluetooth start
+```
+
+### Compartir pantalla
+Se necesita el **backend** del entorno de escritorio instalado *xdg-desktop-portal*:
+Para **GNOME**:
+```
+$ apk add xdg-desktop-portal-gtk
+```
+
+## Video Radeon
+
+## Paquetes Adicionales
+ Completar el soporte de idioma: [*](https://github.com/hpardo79/AlpineLinuxGnomeLenovoE485/edit/main/README.md#hardware)
+
