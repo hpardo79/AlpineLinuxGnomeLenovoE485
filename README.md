@@ -133,3 +133,39 @@ $ rc-update add apk-polkit-server default
 $ rc-service apk-polkit-server start
 ```
 
+## Instalar "Network Manager"
+```
+$ apk add networkmanager
+$ apk add networkmanager-wifi
+$ apk add network-manager-applet
+```
+
+Iniciar el servicio y agregarlo al arranque:
+```
+$ rc-service networkmanager start
+$ rc-update add networkmanager default
+```
+
+~~Agregar el usuario al grupo plugdev:~~
+```
+$ adduser plugdev
+```
+
+Detener servicios en conflicto
+Edita la interfaces en */etc/network/interfaces* comenta el contenido:
+```
+#auto eth0
+#iface eth0 inet dhcp
+```
+
+## Sonido (Pipewire)
+Pipewire permisos para acceder a los dispositivos:
+```
+$ addgroup  audio
+$ addgroup  video
+```
+
+Instalar los paquetes:
+```
+$ apk add pipewire gst-plugin-pipewire
+```
