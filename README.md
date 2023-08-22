@@ -52,10 +52,27 @@ $ apk update
 $ apk upgrade
 ```
 
-## Editor para el Terminal
-Instalar el **editor** de nuestra preferencia (ej. vim, nano.)
+## Herramientas Básicas
+Instala una selección de paquetes comúnmente utilizados:
 ```
-$ apk add <editor>
+$ apk add sed attr dialog bash bash-completion grep util-linux pciutils usbutils binutils findutils readline lsof less nano curl
+```
+
+### Configurar "Bash Shell"
+
+Para cambiar el shell de `root` debemos editar:
+```
+$ <editor> /etc/passwd
+```
+
+Buscar el shell predeterminado del usuario, ej. */bin/ash*
+```
+root:x:0:0:root:/root:/bin/ash
+```
+
+Reemplazar con */bin/bash*:
+```
+root:x:0:0:root:/root:/bin/bash
 ```
 
 ## Doas (no usar Sudo)
@@ -80,7 +97,7 @@ Desactiva la cuenta de root:
 $ doas passwd -l root
 ```
 
-## Repositorios de la Comunidad
+## Habilitar repositorios "Community"
 Editar los repositorios de `apk` y habilitar los de la comunidad:
 ```
 $ <editor> /etc/apk/repositories
@@ -93,23 +110,26 @@ http://mirror.leaseweb.com/alpine/v3.18/main
 #http://mirror.leaseweb.com/alpine/v3.18/community
 ```
 
-## Bash Shell
-Instalar el intérprete de comandos `bash`
+## Agregar soporte para idiomas con "Locale"
+Instala paquete para idiomas
 ```
-apk add bash bash-completion bash-doc
-```
-
-Para cambiar el shell de `root` debemos editar:
-```
-$ <editor> /etc/passwd
+$ apk add musl-locales
 ```
 
-Buscar el shell predeterminado del usuario, ej. */bin/ash*
+Define el idioma en */etc/profile.d/locale.sh*
 ```
-root:x:0:0:root:/root:/bin/ash
+LANG=es_PA.UTF-8
 ```
 
-Reemplazar con */bin/bash*:
+# Entorno de Escritorio (Gnome 44)
 ```
-root:x:0:0:root:/root:/bin/bash
+$ setup-desktop gnome
 ```
+
+## Habilitar instalación por la Tienda Gnome
+Para que la **Tienda de Gnome** instale los paquetes `apk` es necesario habilitar el servicio `apk-polkit-server`.
+```
+$ rc-update add apk-polkit-server default
+$ rc-service apk-polkit-server start
+```
+
