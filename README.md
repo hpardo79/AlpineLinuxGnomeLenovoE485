@@ -264,5 +264,5 @@ $ apk add xdg-desktop-portal-gtk
 ## Video Radeon
 
 ## Paquetes Adicionales
- Completar el soporte de idioma: [*](https://github.com/hpardo79/AlpineLinuxGnomeLenovoE485/edit/main/README.md#hardware)
+ Completar el soporte de idioma: [*](#agregar-soporte-para-idiomas-con-locale)
 
