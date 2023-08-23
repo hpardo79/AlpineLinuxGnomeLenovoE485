@@ -14,7 +14,7 @@ Para esta instalación de Alpine utilice un computador portátil
 + RAM: 16GB
 + HDD: SSD M.2 256GB
 
-<img src="/img/lenovo-thinkpad-e485.png" width=40% height=30%>
+<img src="/img/lenovo-thinkpad-e485.png" width=40% height=50%>
 
 ## SOFTWARE
 La versión de Alpine y el entorno de Escritorio
@@ -262,20 +262,44 @@ $ apk add xdg-desktop-portal-gtk
 ```
 
 ## Video Radeon
-... pendiente
 
-## Paquetes Adicionales
+### Firmware
+```
+$ apk add linux-firmware-radeon
+```
 
-### Completar el soporte de idiomas [Locale](#agregar-soporte-para-idiomas-con-locale)
+### Kernel Modesetting (KMS)
+Habilitar KMS en el arranque; agregar los **modulos** `radeon` `amdgpu` `fbcon` en */etc/modules*:
+```
+$ echo radeon >> /etc/modules
+$ echo fbcon >> /etc/modules
+```
+
+Instalar mkinitfs:
+```
+$ apk add mkinitfs
+```
+
+Habilita la función kms en la configuración de mkinitfs agregándola a la variable de características:
+Contenido de */etc/mkinitfs/mkinitfs.conf*
+```
+features="keymap cryptsetup kms ata base ide scsi usb virtio ext4"
+```
+
+Iniciar *mkinitfs*. Reinicia y testea la configuración.
+
+## Configuraciones y Paquetes Adicionales
+
+### Completar el soporte de idiomas con [Locale](#agregar-soporte-para-idiomas-con-locale)
 Instalar los paquetes de traducción de todos los paquetes instalados:
 ```
-apk add lang
+$ apk add lang
 ```
 
 ### Documentación
 Instalar la documentación de todos los paquetes instalados:
 ```
-apk add docs
+$ apk add docs
 ```
 
 
