@@ -222,9 +222,9 @@ default_access.properties = {
 ### "Realtime Scheduling"
 
 Asegurar que el usuario tenga los permisos ilimitados. Agregar al grupo `pipewire`.
-
+```
 $ addgroup pipewire
-
+```
 
 ### Video Webcams
 El video debe funcionar para dispositivos video4linux **(v4l2)** (por ejemplo *webcams*) y aplicaciones GStreamer. 
