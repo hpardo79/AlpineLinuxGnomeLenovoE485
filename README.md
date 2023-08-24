@@ -298,10 +298,19 @@ $ apk add mesa-va-gallium
 
 Reiniciar
 
-## Configuraciones y Paquetes Adicionales
+## Flatpak
+Instalar Flatpak y agregar el repositorio.
+```
+$ apk add flatpak
+$ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+```
+
+Reiniciar
+
+## Paquetes Adicionales
 
 ### Completar el soporte de idiomas con [Locale](#agregar-soporte-para-idiomas-con-locale)
-Instalar los paquetes de traducción de todos los paquetes instalados.
+Instalar la traducción de todos los paquetes instalados.
 ```
 $ apk add lang
 ```
@@ -312,7 +321,10 @@ Instalar la documentación de todos los paquetes instalados.
 $ apk add docs
 ```
 
-
+### Fuentes Adicionales
+```
+apk add nerd-fonts font-terminus font-inconsolata font-dejavu font-noto font-noto-cjk font-awesome font-noto-extra
+```
 
 
  
