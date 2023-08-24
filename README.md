@@ -325,7 +325,7 @@ $ apk add docs
 
 ### Fuentes Adicionales
 ```
-apk add nerd-fonts font-terminus font-inconsolata font-dejavu font-noto font-noto-cjk font-awesome font-noto-extra
+$ apk add nerd-fonts font-terminus font-inconsolata font-dejavu font-noto font-noto-cjk font-awesome font-noto-extra
 ```
 
 # Disfruten de su Alpine Linux
