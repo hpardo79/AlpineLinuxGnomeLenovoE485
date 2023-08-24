@@ -285,12 +285,13 @@ Iniciar *mkinitfs*. Reinicia y testea la configuración.
 
 ### Wayland
 Instala los paquetes requeridos.
+
 **Controladores para Mesa**:
 ```
 $ apk add mesa-dri-gallium
 ```
 
-***Controladores VA-API para codificación y decodificación de video acelerada por Hardware**:
+**Controladores VA-API para codificación y decodificación de video acelerada por Hardware**:
 ```
 $ apk add mesa-va-gallium
 ```
