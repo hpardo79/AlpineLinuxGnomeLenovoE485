@@ -1,7 +1,7 @@
-# Utilizar Alpine Linux como SO de uso diario
+# Utilizar Alpine Linux como SO de uso cotidiano
 Breve guía para instalar **Alpine Linux** con el escritorio **Gnome 44** en un computador portátil, para *Sistema Operativo* de uso cotidiano; a pesar de que esta **Distro** es mayormente utilizada para **Servidores de contenedores Docker**.
 
-Paso a paso mostrare toda la configuracion del equipo para optimizarlo para las diferentes tareas de un equipo de trabajo (ejemplo: ofimática, navegación web, edición multimedia, programación, etc).
+Paso a paso mostrare toda la configuracion del equipo para optimizarlo y lograr su funcionamiento óptimo en diferentes tareas como equipo de trabajo (para ofimática, navegación web, edición multimedia, programación, etc).
 
 Algunas de las configuraciones estarán con un texto ~~tachado~~ porque no fueron utilizadas en esta instalación, pero son mostradas ya que pueden ser útiles en los casos de conflictos.
 
