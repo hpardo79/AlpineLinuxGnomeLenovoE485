@@ -14,7 +14,7 @@ Equipo para esta instalación:
 + RAM: 16GB
 + HDD: SSD M.2 256GB
 
-<img src="/img/lenovo-thinkpad-e485.png" width=50% height=50%>
+<img src="/img/lenovo-thinkpad-e485.png" width=100% height=100%>
 
 ## SOFTWARE
 La versión de Alpine y el entorno de Escritorio
@@ -326,6 +326,8 @@ $ apk add docs
 apk add nerd-fonts font-terminus font-inconsolata font-dejavu font-noto font-noto-cjk font-awesome font-noto-extra
 ```
 
+# Disfruten de su Alpine Linux
+<img src="/img/my-desktop.png" width=100% height=100%>
 
  
 
