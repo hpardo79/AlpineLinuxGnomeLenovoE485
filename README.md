@@ -23,6 +23,8 @@ La versión de Alpine y el entorno de Escritorio
 + APPS: Flatpak
 
 # Instalar Alpine
+Descarga la version de [Alpine Linux](https://www.alpinelinux.org/downloads/).
+
 Iniciamos el equipo y arrancamos desde la imagen de la Distro, inmediatamente loguearse como usuario `root`.
 
 Ejecutamos el script de instalación incluido en Alpine Linux.
