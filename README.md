@@ -5,6 +5,8 @@ Paso a paso mostrare toda la configuracion del equipo para optimizarlo y lograr 
 
 Algunas opciones estarán con un texto ~~tachado~~ porque no fueron utilizadas en esta instalación, pero son mostradas ya que pueden ser necesarias para resolver conflictos o problemas con la configuración.
 
+*Actualizaciones al 23 septiembre 2023*: [Corregir Timezone](## Corregir error en la hora mostrada en el Entorno de Escritorio).
+
 ## HARDWARE
 Equipo para esta instalación:
 + Marca: Lenovo 
@@ -44,7 +46,7 @@ Completar las opciones de configuración:
 + **Mirror** (Desde donde descargar los paquetes de aplicaciones. Elegir un servidor de confianza).
 + **Add new user** (Agregar una nueva cuenta de usuario `username`).
 + ~~**SSH** (Secure Shell es un servidor de acceso remoto. **Openssh** es parte de la instalación predeterminada. Use `none` para deshabilitar el logueo remoto, ej. en portátiles).~~
-+ **NTP** (Cliente de protocolo de tiempo de red usado para mantener el reloj del sistema sincronizado con servidor de tiempo. El cliente `chrony` es predeterminado en la instalación. Cambie el cliente por `openntpd` para compatibilidad con algunas aplicaciones). **actualización 25/09/2023** 
++ **NTP** (Cliente de protocolo de tiempo de red usado para mantener el reloj del sistema sincronizado con servidor de tiempo. El cliente `chrony` es predeterminado en la instalación. *Nota: Cambie el cliente por `openntpd` para compatibilidad con algunas aplicaciones*). 
 + **Disk Mode** (Seleccionar entre sin disco `disk=none`, `data`, `sys` o según la opción requerida).
 
 # Primer arranque del sistema
@@ -310,7 +312,7 @@ $ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub
 Reiniciar
 
 ## Corregir error en la hora mostrada en el Entorno de Escritorio
-Puede ocurrir que al instalar nuestro entorno de escritorio no se muestre la hora correcta según la zona horaria que configuramos con anterioridad, para corregirlo se requiere instalar o re-instalar `tzdata`.  **actualización 25/09/2023** 
+Puede ocurrir que al instalar nuestro entorno de escritorio no se muestre la hora correcta según la zona horaria que configuramos con anterioridad, para corregirlo se requiere instalar o re-instalar `tzdata`.
 ```
 $ apk add --no-cache tzdata
 ```
