@@ -5,7 +5,7 @@ Paso a paso mostrare toda la configuracion del equipo para optimizarlo y lograr 
 
 Algunas opciones estarán con un texto ~~tachado~~ porque no fueron utilizadas en esta instalación, pero son mostradas ya que pueden ser necesarias para resolver conflictos o problemas con la configuración.
 
-*Actualizaciones al 23 septiembre 2023*: [Corregir Timezone](## Corregir error en la hora mostrada en el Entorno de Escritorio).
+*Actualizaciones al 23 septiembre 2023*: [Corregir Timezone](https://acortar.link/dhCPDl).
 
 ## HARDWARE
 Equipo para esta instalación:
